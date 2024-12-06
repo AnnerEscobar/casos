@@ -1,0 +1,33 @@
+<mat-nav-list>
+  <ng-container *ngFor="let link of links">
+    <!-- Menú principal -->
+    <div>
+      <div class="menu-item" matLine (click)="toggle(link)" [routerLink]="link.path" routerLinkActive="active">
+        {{ link.name }}
+        <mat-icon *ngIf="link.children?.length" [ngClass]="{ 'rotated': link.isOpen }">
+          expand_more
+        </mat-icon>
+
+      </div>
+
+      <!-- Submenú -->
+      <div class="submenu" [ngClass]="{ 'open': link.isOpen }">
+        <ng-container *ngFor="let child of link.children">
+          <div class="menu-item sub-item" matLine (click)="toggle(child)" [routerLink]="child.path" routerLinkActive="active">
+            <mat-icon *ngIf="child.children?.length" [ngClass]="{ 'rotated': child.isOpen }">
+              expand_more
+            </mat-icon>
+            {{ child.name }}
+          </div>
+
+          <!-- Sub-submenú (si es necesario) -->
+          <div class="submenu" [ngClass]="{ 'open': child.isOpen }">
+            <a matLine *ngFor="let subChild of child.children" [routerLink]="subChild.path">
+              {{ subChild.name }}
+            </a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</mat-nav-list>

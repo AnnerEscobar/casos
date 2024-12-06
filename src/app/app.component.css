@@ -1,0 +1,16 @@
+
+mat-sidenav-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+mat-sidenav {
+  width: 250px;
+  overflow-y: auto;
+}
+
+mat-sidenav-content {
+  flex: 1;
+  overflow: auto;
+}

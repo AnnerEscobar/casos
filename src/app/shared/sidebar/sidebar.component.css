@@ -1,0 +1,45 @@
+mat-list-item {
+  position: relative;
+}
+
+.submenu {
+  padding-left: 20px;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.submenu.open {
+  height: auto;
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sub-item {
+  padding-left: 16px;
+}
+
+.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
