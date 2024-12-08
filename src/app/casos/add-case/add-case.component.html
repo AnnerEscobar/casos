@@ -1,1 +1,98 @@
-<p>add-case works!</p>
+<mat-card>
+  <mat-card-title>Registrar Caso</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="addCaseForm" (ngSubmit)="onSubmit()">
+
+      <!-- Números de caso -->
+      <div class="horizontal-group">
+        <mat-form-field appearance="outline" class="compact-input">
+          <mat-label>Número de Alerta</mat-label>
+          <input matInput formControlName="alertaNumber" placeholder="Ingrese el número de alerta" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="compact-input">
+          <mat-label>Número de DEIC</mat-label>
+          <input matInput formControlName="deicNumber" placeholder="Ingrese el número de DEIC" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="compact-input">
+          <mat-label>Número de MP</mat-label>
+          <input matInput formControlName="mpNumber" placeholder="Ingrese el número de MP" />
+        </mat-form-field>
+      </div>
+
+      <!-- Datos del denunciante -->
+      <h3>Datos del Denunciante</h3>
+      <div formGroupName="denouncerForm">
+        <div class="horizontal-group">
+          <mat-form-field appearance="outline" class="compact-input">
+            <mat-label>Nombre del Denunciante</mat-label>
+            <input matInput formControlName="denouncerName" placeholder="Ingrese el nombre completo" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="compact-input">
+            <mat-label>Parentesco</mat-label>
+            <mat-select formControlName="denouncerKinship">
+              <mat-option *ngFor="let kinship of kinships" [value]="kinship">{{ kinship }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="horizontal-group">
+          <mat-form-field appearance="outline" class="compact-input">
+            <mat-label>CUI</mat-label>
+            <input matInput formControlName="denouncerCui" placeholder="Ingrese el CUI" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="compact-input">
+            <mat-label>Dirección</mat-label>
+            <input matInput formControlName="denouncerAddress" placeholder="Ingrese la dirección" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Datos del desaparecido -->
+      <h3>Datos del Desaparecido</h3>
+      <div formGroupName="missingForm" class="horizontal-group">
+        <mat-form-field appearance="outline" class="compact-input">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="missingName" placeholder="Ingrese el nombre" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="compact-input">
+          <mat-label>Edad</mat-label>
+          <input matInput formControlName="missingAge" type="number" placeholder="Ingrese la edad" />
+        </mat-form-field>
+      </div>
+
+      <!-- Lugar de desaparición -->
+      <h3>Lugar de la Desaparición</h3>
+      <div formGroupName="placeOfDisappearance">
+        <div class="horizontal-group">
+          <mat-form-field appearance="outline" class="compact-input">
+            <mat-label>Departamento</mat-label>
+            <mat-select formControlName="department">
+              <mat-option *ngFor="let department of departments" [value]="department">{{ department }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="compact-input">
+            <mat-label>Municipio</mat-label>
+            <mat-select formControlName="municipality">
+              <mat-option *ngFor="let municipality of municipalities" [value]="municipality">{{ municipality }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="horizontal-group">
+          <mat-form-field appearance="outline" class="compact-input">
+            <mat-label>Dirección</mat-label>
+            <input matInput formControlName="address" placeholder="Ingrese la dirección" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="compact-input">
+            <mat-label>Coordenadas</mat-label>
+            <input matInput formControlName="coordinates" placeholder="Ingrese las coordenadas" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!addCaseForm.valid" class="compact-button">Guardar</button>
+        <button mat-raised-button color="warn" type="button" (click)="onCancel()" class="compact-button">Cancelar</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

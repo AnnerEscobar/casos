@@ -1,1 +1,87 @@
-<p>settings works!</p>
+<div class="container mt-4">
+  <h2 class="mb-4">Configuración de la Aplicación</h2>
+
+  <!-- Configuración General -->
+  <mat-card class="mb-4">
+    <mat-card-title>Configuración General</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Idioma</mat-label>
+        <mat-select>
+          <mat-option value="es">Español</mat-option>
+          <mat-option value="en">Inglés</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Zona Horaria</mat-label>
+        <mat-select>
+          <mat-option value="gmt-6">GMT-6 (Centroamérica)</mat-option>
+          <mat-option value="gmt-5">GMT-5 (Colombia)</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Formato de Fecha y Hora</mat-label>
+        <mat-select>
+          <mat-option value="dd-mm-yyyy">DD/MM/YYYY</mat-option>
+          <mat-option value="mm-dd-yyyy">MM/DD/YYYY</mat-option>
+          <mat-option value="24h">24 horas</mat-option>
+          <mat-option value="12h">12 horas</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-radio-group aria-label="Tema">
+        <mat-radio-button value="light">Claro</mat-radio-button>
+        <mat-radio-button value="dark" class="ml-3">Oscuro</mat-radio-button>
+        <mat-radio-button value="auto" class="ml-3">Automático</mat-radio-button>
+      </mat-radio-group>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Configuración de Notificaciones -->
+  <mat-card class="mb-4">
+    <mat-card-title>Configuración de Notificaciones</mat-card-title>
+    <mat-card-content>
+      <mat-slide-toggle>Activar Notificaciones Push</mat-slide-toggle>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Frecuencia de Notificaciones</mat-label>
+        <mat-select>
+          <mat-option value="inmediato">Inmediato</mat-option>
+          <mat-option value="diario">Diario</mat-option>
+          <mat-option value="semanal">Semanal</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <h4>Tipos de Notificación</h4>
+      <mat-checkbox>Casos asignados</mat-checkbox>
+      <mat-checkbox>Recordatorios de tareas</mat-checkbox>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Configuración de Usuario -->
+  <mat-card class="mb-4">
+    <mat-card-title>Configuración de Usuario</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput disabled placeholder="Nombre del Usuario">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Correo Electrónico</mat-label>
+        <input matInput disabled placeholder="correo@ejemplo.com">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="mr-2">Cambiar Contraseña</button>
+      <button mat-raised-button color="accent">Editar Perfil</button>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Botones de Guardar y Restablecer -->
+  <div class="button-group">
+    <button mat-raised-button color="primary" class="mr-2">Guardar Cambios</button>
+    <button mat-stroked-button color="warn">Restablecer Predeterminado</button>
+  </div>
+</div>

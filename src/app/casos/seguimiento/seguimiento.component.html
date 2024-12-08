@@ -1,0 +1,55 @@
+<mat-card class="seguimiento-form-card">
+  <mat-card-header>
+    <mat-card-title>Seguimiento de Caso</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="seguimientoForm" (ngSubmit)="onSubmit()">
+
+      <!-- Campo Número de Caso -->
+      <mat-form-field appearance="fill">
+        <mat-label>Número de Caso</mat-label>
+        <input matInput formControlName="caseNumber" required />
+        <mat-error *ngIf="seguimientoForm.get('caseNumber')?.hasError('required')">
+          El número de caso es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Campo Estado del Caso -->
+      <mat-form-field appearance="fill">
+        <mat-label>Estado del Caso</mat-label>
+        <mat-select formControlName="caseStatus" required>
+          <mat-option value="abierto">Abierto</mat-option>
+          <mat-option value="cerrado">Cerrado</mat-option>
+          <mat-option value="en_proceso">En Proceso</mat-option>
+        </mat-select>
+        <mat-error *ngIf="seguimientoForm.get('caseStatus')?.hasError('required')">
+          El estado del caso es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Campo Nombre del Investigador -->
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre del Investigador</mat-label>
+        <input matInput formControlName="investigatorName" required />
+        <mat-error *ngIf="seguimientoForm.get('investigatorName')?.hasError('required')">
+          El nombre del investigador es obligatorio.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Cargar Archivos -->
+      <mat-form-field appearance="fill">
+        <mat-label>Documentos Adjuntos (PDF/Word)</mat-label>
+        <input matInput type="text" (change)="onFileChange($event)" multiple />
+        <mat-error *ngIf="fileError">
+          Se deben cargar archivos PDF o Word.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Botón Enviar -->
+      <button mat-raised-button color="primary" [disabled]="seguimientoForm.invalid" type="submit">
+        Actualizar Caso
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

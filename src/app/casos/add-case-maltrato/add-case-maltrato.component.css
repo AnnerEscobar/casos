@@ -1,0 +1,35 @@
+/* Compactar entradas */
+.horizontal-group {
+  display: flex;
+  gap: 16px;
+}
+
+.victim-group,
+.suspect-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+mat-form-field {
+  margin: 0;
+}
+
+.compact-input {
+  width: 100%;
+}
+
+.full-width {
+  width: calc(100% - 32px);
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+mat-card {
+  margin: 16px;
+}

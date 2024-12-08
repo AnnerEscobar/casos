@@ -1,0 +1,34 @@
+/* Estilos para organizar los campos en grupos */
+.horizontal-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para los campos compactos */
+.compact-input {
+  width: 100%;
+}
+
+/* Para que el campo de dirección y coordenadas ocupe el 100% del ancho */
+.full-width {
+  width: 100%;
+}
+
+/* Estilo para los botones */
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Mejorar el espaciado entre los grupos de formulario */
+h3 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+mat-form-field {
+  width: 100%;
+}

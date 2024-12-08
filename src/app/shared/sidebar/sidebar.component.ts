@@ -31,8 +31,18 @@ export class SidebarComponent {
       isOpen: false,
       children: [
         {
-          name: 'Nuevo Caso',
-          path: '/casos/nuevo',
+          name: 'Nueva Alerta',
+          path: '/casos/alerta',
+          isOpen: false,
+        },
+        {
+          name: 'Nuevo Maltrato',
+          path: '/casos/maltrato',
+          isOpen: false,
+        },
+        {
+          name: 'Nuevo Conflicto',
+          path: '/casos/conflicto',
           isOpen: false,
         },
         {

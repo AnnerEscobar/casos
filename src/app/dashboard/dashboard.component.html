@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <!-- Gráfico de tipos de caso -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Tipos de Caso</h4>
+        </div>
+        <div class="card-body">
+          <apx-chart [series]="caseChartOptions.series" [chart]="caseChartOptions.chart"
+            [labels]="caseChartOptions.labels" [responsive]="caseChartOptions.responsive">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráfico de casos por mes -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Casos por Mes</h4>
+        </div>
+        <div class="card-body">
+          <apx-chart [series]="monthChartOptions.series" [chart]="monthChartOptions.chart"
+            [xaxis]="monthChartOptions.xaxis" [title]="monthChartOptions.title">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+    <!-- Gráfico de tipos de caso -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Detalle de alertas</h4>
+        </div>
+        <div class="card-body">
+          <apx-chart [series]="alertaCaseOptions.series" [chart]="alertaCaseOptions.chart"
+            [labels]="alertaCaseOptions.labels" [responsive]="alertaCaseOptions.responsive">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-container">
+      <div class="chart-container">
+        <!-- Gráfico Comparativo de Casos por Mes -->
+        <apx-chart
+          [series]="monthComparisonChartOptions.series"
+          [chart]="monthComparisonChartOptions.chart"
+          [xaxis]="monthComparisonChartOptions.xaxis"
+          [title]="monthComparisonChartOptions.title"
+          [stroke]="monthComparisonChartOptions.stroke"
+          [markers]="monthComparisonChartOptions.markers"
+          [colors]="monthComparisonChartOptions.colors"
+          [legend]="monthComparisonChartOptions.legend"
+        ></apx-chart>
+      </div>
+    </div>
+  </div>
+</div>

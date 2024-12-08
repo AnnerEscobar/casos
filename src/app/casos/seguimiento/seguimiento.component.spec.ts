@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddCaseComponent } from './add-case.component';
+import { SeguimientoComponent } from './seguimiento.component';
 
-describe('AddCaseComponent', () => {
-  let component: AddCaseComponent;
-  let fixture: ComponentFixture<AddCaseComponent>;
+describe('SeguimientoComponent', () => {
+  let component: SeguimientoComponent;
+  let fixture: ComponentFixture<SeguimientoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddCaseComponent]
+      imports: [SeguimientoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AddCaseComponent);
+    fixture = TestBed.createComponent(SeguimientoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
